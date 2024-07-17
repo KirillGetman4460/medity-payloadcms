@@ -30,12 +30,6 @@ const Users: CollectionConfig = {
       type: 'text',
       label: 'DateBirthday',
       required: false,
-    },
-    {
-      name: 'googleAccessToken',
-      type: 'text',
-      label: 'Google Access Token',
-      required: false,
     }
   ],
 }
