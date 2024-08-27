@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload/types'
+import { publicCollection } from '../utils/publicCollection'
 
 const Question: CollectionConfig = {
   slug: 'question',
@@ -8,7 +9,7 @@ const Question: CollectionConfig = {
   },
   access:{
     create: () => true,
-    read:() => true,
+    read: publicCollection,
     update:() => true,
     delete:() => true,
     admin:() => true

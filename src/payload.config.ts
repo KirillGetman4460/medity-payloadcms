@@ -28,12 +28,14 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
+  
   plugins: [
     payloadCloud(),
     seo({
       uploadsCollection: 'media',
     }),
   ],
+  cors: "*",
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI,
