@@ -6,6 +6,13 @@ const Users: CollectionConfig = {
   admin: {
     useAsTitle: 'email',
   },
+  access:{
+    create: () => true,
+    read:() => true,
+    update:() => true,
+    delete:() => true,
+    admin:() => true
+  },
   fields: [
     {
       name: 'email',
@@ -29,6 +36,12 @@ const Users: CollectionConfig = {
       name: 'dateBirthday',
       type: 'text',
       label: 'DateBirthday',
+      required: false,
+    },
+    {
+      name: 'googleAccessToken',
+      type: 'text',
+      label: 'Google Access Token',
       required: false,
     }
   ],

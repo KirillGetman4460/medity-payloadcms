@@ -3,6 +3,13 @@ import type { CollectionConfig } from 'payload/types'
 const Meditation: CollectionConfig = {
   slug: 'meditation',
   auth: false,
+  access:{
+    create: () => true,
+    read:() => true,
+    update:() => true,
+    delete:() => true,
+    admin:() => true
+  },
   fields: [
     {
       name: 'title',

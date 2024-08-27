@@ -2,6 +2,13 @@ import type { CollectionConfig } from 'payload/types'
 
 const Ckakra: CollectionConfig = {
   slug: 'ckakra',
+  access:{
+    create: () => true,
+    read:() => true,
+    update:() => true,
+    delete:() => true,
+    admin:() => true
+  },
   fields: [
     {
       name: 'title',

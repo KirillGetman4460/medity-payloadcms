@@ -12,6 +12,7 @@ import Meditation from './collections/Meditation'
 import Ckakra from './collections/Chakra'
 import Note from './collections/Note'
 import Categories from './collections/Categories'
+import Question from './collections/Quiz'
 import { Media } from './collections/Media'
 
 export default buildConfig({
@@ -20,7 +21,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users,Meditation,Ckakra,Note,Categories,Media],
+  collections: [Users,Meditation,Ckakra,Note,Categories,Media,Question],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
