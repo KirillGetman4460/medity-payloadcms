@@ -28,7 +28,6 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
-  
   plugins: [
     payloadCloud(),
     seo({

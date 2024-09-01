@@ -1,10 +1,11 @@
 import type { CollectionConfig } from 'payload/types'
+import { publicCollection } from '../utils/publicCollection'
 
 const Ckakra: CollectionConfig = {
   slug: 'ckakra',
   access:{
     create: () => true,
-    read:() => true,
+    read: publicCollection,
     update:() => true,
     delete:() => true,
     admin:() => true
@@ -34,7 +35,13 @@ const Ckakra: CollectionConfig = {
       relationTo: 'categories',
       label: 'Category',
       required: true,
-    }
+    },
+    {
+      name: 'media',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+    },
   ],
 }
 

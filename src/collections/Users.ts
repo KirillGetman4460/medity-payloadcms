@@ -1,4 +1,5 @@
 import { CollectionConfig } from 'payload/types'
+import { publicCollection } from '../utils/publicCollection'
 
 const Users: CollectionConfig = {
   slug: 'users',
@@ -8,7 +9,7 @@ const Users: CollectionConfig = {
   },
   access:{
     create: () => true,
-    read:() => true,
+    read:publicCollection,
     update:() => true,
     delete:() => true,
     admin:() => true
