@@ -14,6 +14,7 @@ import Note from './collections/Note'
 import Categories from './collections/Categories'
 import Question from './collections/Quiz'
 import { Media } from './collections/Media'
+import { Image } from './collections/Image'
 
 export default buildConfig({
   admin: {
@@ -21,7 +22,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users,Meditation,Ckakra,Note,Categories,Media,Question],
+  collections: [Users,Meditation,Ckakra,Note,Categories,Media,Question,Image],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },

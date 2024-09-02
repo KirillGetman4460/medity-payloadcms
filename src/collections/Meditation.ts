@@ -1,15 +1,15 @@
-import type { CollectionConfig } from 'payload/types'
-import { publicCollection } from '../utils/publicCollection'
+import type { CollectionConfig } from 'payload/types';
+import { publicCollection } from '../utils/publicCollection';
 
 const Meditation: CollectionConfig = {
   slug: 'meditation',
   auth: false,
-  access:{
+  access: {
     create: () => true,
     read: publicCollection,
-    update:() => true,
-    delete:() => true,
-    admin:() => true
+    update: () => true,
+    delete: () => true,
+    admin: () => true,
   },
   fields: [
     {
@@ -19,7 +19,7 @@ const Meditation: CollectionConfig = {
       required: true,
     },
     {
-      name: 'duration',
+      name: 'type',
       type: 'number',
       label: 'Duration (minutes)',
       required: true,
@@ -31,11 +31,21 @@ const Meditation: CollectionConfig = {
       required: false,
     },
     {
-      name: 'categoryId',
+      name: 'category',
       type: 'relationship',
       relationTo: 'categories',
       label: 'Category',
       required: true,
+    },
+    {
+      name: 'mainCategory',
+      type: 'select',
+      label: 'Main Category',
+      required: true,
+      options: [
+        { label: 'Sleep', value: 'sleep' },
+        { label: 'Relax', value: 'relax' },
+      ],
     },
     {
       name: 'media',
@@ -43,7 +53,13 @@ const Meditation: CollectionConfig = {
       relationTo: 'media',
       required: false,
     },
+    {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'image',
+      required: false,
+    },
   ],
-}
+};
 
-export default Meditation
+export default Meditation;
