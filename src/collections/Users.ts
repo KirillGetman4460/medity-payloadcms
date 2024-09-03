@@ -40,11 +40,12 @@ const Users: CollectionConfig = {
       required: false,
     },
     {
-      name: 'googleAccessToken',
-      type: 'text',
-      label: 'Google Access Token',
+      name: 'premium',
+      type: 'checkbox',
+      label: 'Premium',
+      defaultValue: false,
       required: false,
-    }
+    },
   ],
 }
 

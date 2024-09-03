@@ -11,6 +11,7 @@ const Meditation: CollectionConfig = {
     delete: () => true,
     admin: () => true,
   },
+
   fields: [
     {
       name: 'title',
