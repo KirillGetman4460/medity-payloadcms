@@ -8,9 +8,9 @@ const Users: CollectionConfig = {
     useAsTitle: 'email',
   },
   access:{
-    create: () => true,
+    create:publicCollection,
     read:publicCollection,
-    update:() => true,
+    update:publicCollection,
     delete:() => true,
     admin:() => true
   },
