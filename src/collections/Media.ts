@@ -1,20 +1,37 @@
-import { slateEditor } from '@payloadcms/richtext-slate'
-import path from 'path'
-import type { CollectionConfig } from 'payload/types'
+import { CollectionConfig } from 'payload/types';
+import supabase from '../utils/supabase';
 
-export const Media: CollectionConfig = {
+const Media: CollectionConfig = {
   slug: 'media',
   upload: {
-    staticDir: path.resolve(__dirname, '../../../media'),
-    adminThumbnail: ({ doc }) =>
-      `https://google.com/custom-path-to-file/${doc.filename}`,
-  },
-  access: {
-    create: () => true,
-    read: () => true,
-    update: () => true,
-    delete: () => true
+    staticURL: '/assets',
+    staticDir: 'assets',
+    disableLocalStorage: true,
   },
   fields: [
+    {
+      name: 'url',
+      type: 'text',
+      access: {
+        create: () => false,
+      },
+      admin: {
+        disabled: true,
+      },
+      hooks: {
+        afterRead: [
+          async ({ data: doc }) => {
+            const { data,} = await supabase.storage
+              .from(process.env.SUPABASE_BUCKET)
+              .getPublicUrl(doc.filename);
+
+
+            return data.publicUrl;
+          },
+        ],
+      },
+    },
   ],
-}
+};
+
+export default Media;

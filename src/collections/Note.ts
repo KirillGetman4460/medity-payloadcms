@@ -1,29 +1,33 @@
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'payload/types';
+import { publicCollection } from '../utils/publicCollection';
 
 const Note: CollectionConfig = {
   slug: 'note',
   auth: false,
-  access:{
-    create: () => true,
-    read:() => true,
-    update:() => true,
-    delete:() => true,
-    admin:() => true
+  access: {
+    create: publicCollection,
+    read: publicCollection,
+    update: publicCollection,
+    delete: publicCollection,
+    admin: publicCollection,
   },
   fields: [
+    {
+      name: 'userId',
+      type: 'text',
+      label: 'userId',
+    },
     {
       name: 'title',
       type: 'text',
       label: 'Title',
-      required: true,
     },
     {
       name: 'content',
       type: 'text',
       label: 'Content',
-      required: true,
     },
-  ],
-}
+  ]
+};
 
-export default Note
+export default Note;

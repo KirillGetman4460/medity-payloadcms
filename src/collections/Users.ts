@@ -6,7 +6,7 @@ const Users: CollectionConfig = {
   auth: true,
   admin: {
     useAsTitle: 'email',
-  },
+  },  
   access:{
     create:publicCollection,
     read:publicCollection,

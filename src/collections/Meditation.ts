@@ -5,11 +5,11 @@ const Meditation: CollectionConfig = {
   slug: 'meditation',
   auth: false,
   access: {
-    create: () => true,
+    create: publicCollection,
     read: publicCollection,
-    update: () => true,
-    delete: () => true,
-    admin: () => true,
+    update: publicCollection,
+    delete: publicCollection,
+    admin: publicCollection,
   },
 
   fields: [
