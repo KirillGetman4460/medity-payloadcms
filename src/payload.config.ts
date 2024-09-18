@@ -1,9 +1,4 @@
 import path from 'path'
-
-import { S3Client } from '@aws-sdk/client-s3';
-
-import s3Upload from 'payload-s3-upload';
-
 import { payloadCloud } from '@payloadcms/plugin-cloud'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { webpackBundler } from '@payloadcms/bundler-webpack'
