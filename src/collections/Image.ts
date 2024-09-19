@@ -5,9 +5,9 @@ import type { CollectionConfig } from 'payload/types'
 export const Image: CollectionConfig = {
   slug: 'image',
   upload: {
-    staticDir: path.resolve(__dirname, '../../../media'),
+    staticDir: path.resolve(__dirname, '../../image'), // Путь к папке media
     adminThumbnail: ({ doc }) =>
-      `https://google.com/custom-path-to-file/${doc.filename}`,
+      `https://medity.slan.studio/media/${doc.filename}`, // Замените на ваш домен
   },
   access: {
     create: () => true,
@@ -16,5 +16,8 @@ export const Image: CollectionConfig = {
     delete: () => true
   },
   fields: [
+    // Поля для коллекции Image
   ],
-}
+};
+
+export default Image;

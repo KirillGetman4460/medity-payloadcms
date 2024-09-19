@@ -6,9 +6,9 @@ import { publicCollection } from '../utils/publicCollection';
 export const Media: CollectionConfig = {
   slug: 'media',
   upload: {
-    staticDir: path.resolve(__dirname, '../../../media'),
+    staticDir: path.resolve(__dirname, '../../media'), 
     adminThumbnail: ({ doc }) =>
-      `https://google.com/custom-path-to-file/${doc.filename}`,
+      `https://medity.slan.studio/media/${doc.filename}`,
   },
   access: {
     create: publicCollection,
@@ -16,7 +16,6 @@ export const Media: CollectionConfig = {
     update: publicCollection,
     delete: publicCollection
   },
-
   fields: [
     {
       name: 'url',
@@ -30,4 +29,5 @@ export const Media: CollectionConfig = {
     },
   ],
 };
+
 export default Media;
