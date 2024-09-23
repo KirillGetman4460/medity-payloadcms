@@ -1,8 +1,8 @@
 import type { CollectionConfig } from 'payload/types';
 import { publicCollection } from '../utils/publicCollection';
 
-const Ckakra: CollectionConfig = {
-  slug: 'ckakra',
+const Chakra: CollectionConfig = {
+  slug: 'chakra',
   access: {
     create: () => true,
     read: publicCollection,
@@ -49,4 +49,4 @@ const Ckakra: CollectionConfig = {
   ],
 };
 
-export default Ckakra;
+export default Chakra;
