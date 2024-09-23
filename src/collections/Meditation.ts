@@ -11,7 +11,9 @@ const Meditation: CollectionConfig = {
     delete: publicCollection,
     admin: publicCollection,
   },
-
+  admin: {
+    useAsTitle: 'title',
+  },
   fields: [
     {
       name: 'title',

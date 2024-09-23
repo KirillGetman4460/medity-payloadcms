@@ -11,6 +11,7 @@ import Meditation from './collections/Meditation'
 import Ckakra from './collections/Chakra'
 import Note from './collections/Note'
 import Categories from './collections/Categories'
+
 import Question from './collections/Quiz'
 import Media from './collections/Media'
 import Image from './collections/Image'

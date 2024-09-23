@@ -1,14 +1,17 @@
-import type { CollectionConfig } from 'payload/types'
-import { publicCollection } from '../utils/publicCollection'
+import type { CollectionConfig } from 'payload/types';
+import { publicCollection } from '../utils/publicCollection';
 
 const Ckakra: CollectionConfig = {
   slug: 'ckakra',
-  access:{
+  access: {
     create: () => true,
     read: publicCollection,
-    update:() => true,
-    delete:() => true,
-    admin:() => true
+    update: () => true,
+    delete: () => true,
+    admin: () => true,
+  },
+  admin: {
+    useAsTitle: 'title',
   },
   fields: [
     {
@@ -18,29 +21,24 @@ const Ckakra: CollectionConfig = {
       required: true,
     },
     {
-      name: 'type',
-      type: 'number',
-      label: 'Duration (minutes)',
-      required: true,
-    },
-    {
-      name: 'description',
-      type: 'text',
-      label: 'Description',
-      required: false,
-    },
-    {
-      name: 'category',
+      name: 'meditations',
       type: 'relationship',
-      relationTo: 'categories',
-      label: 'Category',
+      relationTo: 'meditation',
+      label: 'Meditations',
       required: true,
+      hasMany: true,   
     },
     {
-      name: 'media',
-      type: 'upload',
-      relationTo: 'media',
-      required: false,
+      name: 'affirmations',
+      type: 'array',
+      label: 'Affirmations',
+      fields: [
+        {
+          name: 'affirmation',
+          type: 'text',
+          label: 'Affirmation',
+        },
+      ],
     },
     {
       name: 'image',
@@ -49,6 +47,6 @@ const Ckakra: CollectionConfig = {
       required: false,
     },
   ],
-}
+};
 
-export default Ckakra
+export default Ckakra;
