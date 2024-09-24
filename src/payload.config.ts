@@ -14,6 +14,9 @@ import Categories from './collections/Categories'
 import Question from './collections/Quiz'
 import Media from './collections/Media'
 import Image from './collections/Image'
+import Profiles from './collections/Profiles'
+import Goal from './collections/Goals'
+import Favorite from './collections/Favorite'
 
 export default buildConfig({
   admin: {
@@ -21,7 +24,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, Meditation, Chakra, Note, Categories, Media, Question, Image],
+  collections: [Users, Meditation, Chakra, Note, Categories, Media, Question, Image,Profiles,Goal,Favorite],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
